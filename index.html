@@ -4,49 +4,91 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>Your Adventure to China - Presented by Oasis Travel Agency</title>
+
+   
+
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body class='homepage'>
 
   
   <div id="slides">
-  <ul class="slides-container">
-    <li>
-      <img src="images/china0.jpg" alt="">
-     
-    </li>
-    <li>
-      <img src="images/china1.jpg" alt="">
-     
-    </li>
-    <li>
-      <img src="images/china2.jpg" alt="">
-      
-    </li>
-  </ul>
-  <nav class="slides-navigation">
-    <a href="#" class="next"><i class="fi-star"></i></a>
+    <ul class="slides-container">
+      <li>
+        <img src="images/china0.jpg" alt="">
+       
+      </li>
+      <li>
+        <img src="images/china1.jpg" alt="">
+       
+      </li>
+      <li>
+        <img src="images/china2.jpg" alt="">
+        
+      </li>
+      <li>
+        <img src="images/china3.jpg" alt="">
+        
+      </li>
+      <li>
+        <img src="images/china4.jpg" alt="">
+        
+      </li>
+      <li>
+        <img src="images/china5.jpg" alt="">
+        
+      </li>
+      <li>
+        <img src="images/china6.jpg" alt="">
+        
+      </li>
+      <li>
+        <img src="images/china8.jpg" alt="">
+        
+      </li>
+      <li>
+        <img src="images/china9.jpg" alt="">
+        
+      </li>
+      <li>
+        <img src="images/china10.jpg" alt="">
+        
+      </li>
+      <li>
+        <img src="images/china11.jpg" alt="">
+        
+      </li>
+      <li>
+        <img src="images/china12.jpg" alt="">
+        
+      </li>
 
-    <a href="#" class="prev"><i class="fi-star"></i></a>
-  </nav>
+    </ul>
+ 
 </div>
 
+<div class="overlay"></div>
 
-
-
-
- 
 
   <div class="logo">
     <a href="/">
       <img src="images/logo.png">
-
     </a>
-
   </div>
 
+  <div class="homepage-intro">
+    
+      <a href="info.html">
+        <h1>Your Adventure to China</h1>
 
+        <i class="fi-play-circle"></i>
+
+      </a>
+      
+
+
+  </div>
 
 
 
@@ -61,6 +103,44 @@
  
 
     <script src="js/app.js"></script>
+
+
+    <script type="text/javascript">
+      
+      
+$(document).ready(function() {
+  $(document).on('init.slides', function() {
+    $('.loading-container').fadeOut(function() {
+      $(this).remove();
+    });
+  });
+
+  $('#slides').superslides({
+    slide_easing: 'easeInOutCubic',
+    slide_speed: 800,
+    pagination: false,
+    hashchange: false,
+    scrollable: true,
+    animation: 'fade',
+    play: 3000
+  });
+
+  document.ontouchmove = function(e) {
+    e.preventDefault();
+  };
+  $('#slides').hammer().on('swipeleft', function() {
+    $(this).superslides('animate', 'next');
+  });
+
+  $('#slides').hammer().on('swiperight', function() {
+    $(this).superslides('animate', 'prev');
+  });
+
+  
+});
+
+      
+    </script>
 
 
   </body>
