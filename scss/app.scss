@@ -78,11 +78,18 @@ $font-path: "../fonts/foundation-icons/foundation-icons";
 @import "../fonts/foundation-icons/foundation-icons.css";
 
 
-body {
-	background-color: $white;
+html {
+	min-height: 100%; 
+	height: 100%;
 }
 
-.logo {
+
+body {
+	background-color: $white;
+	overflow-x: hidden;
+}
+
+.homepage .logo {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -91,28 +98,369 @@ body {
 	width: 50%;
 	@include breakpoint(large) {
 
-		padding: 2em;
+		padding: 1em;
 	
 		width: 100%;
 	}
+
 }
 
+.small-logo {
+	width: 6em;
+}
 
-.info-page {
-	background-image: url('../images/china4.jpg');
-	background-size: 100% auto;
-    background-repeat: no-repeat;
+nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
 
+	@include breakpoint(large) {
+			position: relative;
+			width: inherit;
+		}
+
+
+}
+
+header {
+	background-color: $primary-color;
+	@include breakpoint(medium) {
+		background-color: transparent;
+		}
+
+}
+
+header .row {
+	max-width: 100%;
+	padding-top: 1em;
+	p {
+		color: $white;	
+		font-family: 'HelloLucky';
+		font-size: 3em;
+	}
+
+	p.logo {
+		@include breakpoint(medium) {
+			font-size: 3em;
+			margin-top: 0.5em;
+		}
+	}
+}
+
+body.main {
 
     @include breakpoint(medium) {
-    	background-position: 0 -14em;
+    	//background-position: 0 -8em;
+    	
+		background-size: 100% auto;
+	    background-repeat: no-repeat;
+	    background-color: transparent;
 
     }
 
     @include breakpoint(large) {
-    	background-position: 0 -18em;
+    	//background-position: 0 -12em;
+
+
 
     }
+}
+
+
+
+ .fullwidth-image {
+    	overflow: hidden;
+    	height: 30em;
+    	margin-top: 3em;
+    	background-size: cover;
+    	background-position: 50%;
+    	//background-position-y: 50%;
+
+    	&.china1 {
+    		background-image: url('../images/china5.jpg');	
+    	}
+
+    	&.china2 {
+    		background-image: url('../images/china8.jpg');	
+    	}
+
+    	&.china3 {
+    		background-image: url('../images/container1.jpg');	
+    	}
+
+    	&.china4 {
+    		background-image: url('../images/china12.jpg');	
+    	}
+
+    	&.china5 {
+    		background-image: url('../images/china10.jpg');	
+    	}
+    	&.china6 {
+    		background-image: url('../images/china6.jpg');	
+    	}
+
+    	&.china7 {
+    		background-image: url('../images/china4.jpg');	
+    	}
+
+
+
+
+
+    }
+
+
+// .fullwidth-image img{
+// 	width: 100%;
+// 	padding-top: -50%;
+// }
+
+// .fullwidth-image {
+// 	//max-height: 20em;
+// 	overflow: hidden;
+// 	height: 80%;
+// }
+
+
+.info-page {
+	@include breakpoint(medium) {   	
+    	background-image: url('../images/china0_bg.jpg');		
+    } 
+
+}
+
+.quotation-page {
+	@include breakpoint(medium) {   	
+    	background-image: url('../images/china2_bg.jpg');		
+    } 
+
+}
+
+.disclaimer-page {
+	@include breakpoint(medium) {   	
+    	background-image: url('../images/china12_bg.jpg');		
+    } 
+
+}
+
+.whyoasis-page {
+	@include breakpoint(medium) {   	
+    	background-image: url('../images/china3_bg.jpg');		
+    } 
+
+}
+
+
+.day-by-day-page {
+	@include breakpoint(medium) {   	
+    	background-image: url('../images/china1_bg.jpg');		
+    }
+
+}
+
+.flight-page {
+	@include breakpoint(medium) {   	
+    	background-image: url('../images/china10_bg.jpg');		
+    }
+
+}
+
+.general-page {
+	@include breakpoint(medium) {   	
+    	background-image: url('../images/china12_bg.jpg');		
+    }
+
+}
+
+.accommodation-page {
+	@include breakpoint(medium) {   	
+    	background-image: url('../images/china2_bg.jpg');		
+    }
+}
+
+.in-detail-page {
+	@include breakpoint(medium) {   	
+    	background-image: url('../images/china3_bg.jpg');		
+    }
+
+}
+
+.wrap-container {
+	padding-top: 8em;
+
+
+}
+
+.fullwidth {
+	width: 100%;
+	max-width: 100%;
+}
+
+.bg-image {
+	backface-visibility: hidden;
+    position: absolute;
+   	left: 0;
+    top: 0px;
+    z-index: -1;
+    max-width: none;
+    width: 110%;
+    // height: 1100px;
+    // width: 1954.98px;
+}
+
+.bg-image img {
+	display: none;
+	width: 110%;
+	@include breakpoint(medium) {   	
+	-webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 15s linear infinite 0s;
+    -moz-animation: imageAnimation 15s linear infinite 0s;
+   
+    -ms-animation: imageAnimation 15s linear infinite 0s;
+    animation: imageAnimation 15s linear infinite 0s;
+    display: inherit;
+}
+
+}
+
+
+@-webkit-keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: scale(1.15);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1);
+        -webkit-animation-timing-function: ease-in-out;
+    }
+}
+@-moz-keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        -moz-animation-timing-function: ease-in-out;
+    }
+    50% {
+        opacity: 1;
+        -moz-transform: scale(1.15);
+    }
+    100% {
+        opacity: 0;
+        -moz-transform: scale(1);
+        -moz-animation-timing-function: ease-in-out;
+    }
+}
+
+@-ms-keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        -ms-animation-timing-function: ease-in-out;
+    }
+    50% {
+        opacity: 1;
+        -ms-transform: scale(1.15);
+    }
+    100% {
+        opacity: 0;
+        -ms-transform: scale(1);
+        -ms-animation-timing-function: ease-in-out;
+    }
+}
+@keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+        animation-timing-function: ease-in-out;
+    }
+}
+@-webkit-keyframes imageAnimation1 {
+    0% {
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    50% {
+        -webkit-transform: scale(1.15);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -webkit-animation-timing-function: ease-in-out;
+    }
+}
+@-moz-keyframes imageAnimation1 {
+    0% {
+        -moz-animation-timing-function: ease-in-out;
+    }
+    50% {
+        -moz-transform: scale(1.15);
+    }
+    100% {
+        -moz-transform: scale(1);
+        -moz-animation-timing-function: ease-in-out;
+    }
+}
+
+@-ms-keyframes imageAnimation1 {
+    0% {
+        -ms-animation-timing-function: ease-in-out;
+    }
+    50% {
+        -ms-transform: scale(1.15);
+    }
+    100% {
+        -ms-transform: scale(1);
+        -ms-animation-timing-function: ease-in-out;
+    }
+}
+@keyframes imageAnimation1 {
+    0% {
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+        animation-timing-function: ease-in-out;
+    }
+}
+
+
+
+.top-bar-right {
+
+	@include breakpoint(medium) {
+		width: 100% !important;
+	    
+	}
+
+	@include breakpoint(large) {
+		float: left;
+		width: inherit !important;
+	    
+	}
+}
+
+.top-bar {
+	@include breakpoint(large) {
+		margin-top: 1em;
+		margin-bottom: 3em;
+	    
+	}
+
+
 }
 
 
@@ -127,28 +475,299 @@ body {
 	height: 100%;
 	background-color: black;
 	top: 0;
-	opacity: 0.3;
+	opacity: 0.4;
     z-index: 9;
 }
 
-h1 {
+.day-by-day {
+	// border-bottom: 1px solid $secondary-color;
+	margin-bottom: 3em;
+	@include breakpoint(xlarge) {
+		margin-bottom: 5em;
+	}
+
+}
+
+td {
+	color: $white;
+	width: 20%;
+
+	&:first-child {
+		width: 80%;
+	}
+
+	span {
+		font-size: 80%;
+	}
+}
+
+h1, h2 {
 	font-family: 'HelloLucky';
+	text-align: center;
+}
+
+h1 {
+	color: $primary-color;
+	padding-top: 0.5em;
+	padding-bottom: 0.2em;
+	word-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+h2 {
+	color: $primary-color;
+}
+
+h3 {
+	color: $primary-color;
+}
+
+
+.hotel-images img {
+	width: 100%;
+}
+
+.float-right {
+	display: none;
+	font-size:80%;
+	@include breakpoint(large) {
+		float: right;
+		margin: 0;
+		padding: 2em 1em 1em 1em;
+	
+
+	}
+}
+
+
+
+.day-by-day-menu {
+	background-color: $white;
+	display: none;
+
+	&.active {
+		h2 {
+			background-color: lightgray;
+			padding: 0.3em 0;
+		}
+
+		@include breakpoint(large) {
+			display: block;
+			position: fixed;
+			width: 13em;
+			bottom: 0;
+	    	z-index: 999;
+
+		}
+	}
+
+}
+
+.image-border {
+	margin-bottom: 1em;
+}
+
+.small-font {
+	font-size: 80%;
+}
+
+
+footer {
+	padding-bottom: 3em;
+	background-color: #333;
+	p {
+		color: #888;
+	}
+}
+
+.footer-menu {
+	list-style-type: none;
+	margin: 0;
+	justify-content: center;
+	display: flex;
+	margin-top: 2em;
+
+
+
+	a {
+		color: $white;
+	}
+	li {
+		padding: 1em;
+	}
+}
+
+.align-center {
+	text-align: center;
+}
+
+
+.content-box {
+	margin: 0;
+}
+
+.menu>li>a:hover {
+
+	@include breakpoint(large) {
+   	color: $white;
+   	background-color: $primary-color;
+
+	}
+}
+
+.image-container {
+
+	margin-bottom: 5em;
+	.wrapper.bottom {
+		margin-top: 30px;
+	}
+
+	@include breakpoint(large) {
+	.wrapper {
+		overflow: hidden;
+	}
+	img{
+		-webkit-transition: all 0.4s ease-in-out;
+	    -moz-transition: all 0.4s ease-in-out;
+	    -ms-transition: all 0.4s ease-in-out;
+	    -o-transition: all 0.4s ease-in-out;
+	    transition: all 0.4s ease-in-out;
+
+
+	 &:hover {
+		 -moz-transform: scale(1.2);
+	    -webkit-transform: scale(1.2);
+	    -o-transform: scale(1.2);
+	    -ms-transform: scale(1.2);
+	    transform: scale(1.2);
+
+		}
+    }
+}
 }
 
 .main-container {
+	min-height: 30em;
+	padding-top: 1em;
+	@include breakpoint(medium) {
+		background-color: $white;
+		// padding-top: 2em;
+
+	}
+
+	@include breakpoint(large) {
+		background-color: $white;
+		margin-top: 12em;
+
+	}
+
+	@include breakpoint(xlarge) {
+		background-color: $white;
+		margin-top: 22em;
+
+	}
+
+	@include breakpoint(xxlarge) {
+		background-color: $white;
+		margin-top: 32em;
+
+	}
+
 	// margin-top: 13em;
 	//background-color: $white;
 }
 
+// .nav-main-menu, .float-right, .fixed-logo {
+// 	-webkit-transition: all 2.4s ease-in-out;
+// 	    -moz-transition: all 2.4s ease-in-out;
+// 	    -ms-transition: all 2.4s ease-in-out;
+// 	    -o-transition: all 2.4s ease-in-out;
+// 	    transition: all 2.4s ease-in-out;
+// }
+
+.nav-main-menu.fixed {
+
+	@include breakpoint(large) {
+		position: fixed;
+		z-index: 1;
+
+		.top-bar {
+			background-color: $white;
+			margin-top: 0;
+    		margin-bottom: 3em;
+    		
+    		padding: 1.6em 0 1.6em 0;
+    		border-bottom: 1px solid #aaa;
+    		padding-right: 1em;
+		}
+
+	}
+
+	@include breakpoint(1450) {
+		.top-bar {
+				display: flex !important;
+    		 justify-content: flex-end;
+
+		}
+
+	}
+
+	@include breakpoint(1640) {
+		.top-bar {
+				 justify-content: center;
+
+		}
+
+	}
+
+}
+
+// .float-right.fixed {
+// 	@include breakpoint(xlarge) {
+// 		position: fixed;
+   
+// 	    color: $black;
+// 	    z-index: 3;
+// 	    right: 0;
+
+// 	}
+
+
+// }
+
+.fixed-logo.fixed {
+
+	@include breakpoint(1416) {
+		position: fixed;
+		z-index: 2;
+		background-color: $primary-color;
+		height: 75px;
+	}
+
+	@include breakpoint(xxlarge) {
+
+	}
+
+}
+
+
 .menu>li>a {
 	background-color: $white;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid $secondary-color;
+	line-height: 140%;
+
+	@include breakpoint(large) {
+		border-bottom:none;
+
+	}
 }
 
 .align-top-bar {
 	float: right;
-	margin: 1.5em 1em;
+	margin: 0.5em;
 }
+
+
 
 .homepage-intro {
 	position: absolute;
@@ -161,7 +780,9 @@ h1 {
     text-align: center;
     z-index: 9;
     
-
+    h2 {
+    	font-size: 3.5em;
+    }
     h1 {
     	color: #f2f2f2;
     	
@@ -175,6 +796,7 @@ h1 {
 		    font-size: 6em;
     
     		padding: 1em 1em 0 1em;
+
 		  }
     }
 
